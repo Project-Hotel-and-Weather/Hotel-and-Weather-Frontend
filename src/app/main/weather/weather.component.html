@@ -1,7 +1,144 @@
-<div class="row">
-  <div class="col-xs-10">
-    <hr />
-    <h1>{{ cityName }}</h1>
-    <p>POGODA</p>
+<!-- <div class="card-deck sizzer weather row" *ngFor="let weather of weathers">
+  <div class="card rounded my-3 shadow-lg back-card">
+    <div class="card-top text-center sizeer">
+      <div class="city-name my-2">
+        <div>{{ weather.dayOfTheWeek }}</div>
+        <p>{{ cityName }}</p>
+        <span>...</span>
+      </div>
+      <img src="assets/svg/day-image.svg" alt="" class="card-img-top time" />
+    </div>
+
+    <div class="card-body">
+      <div class="card-mid row">
+        <div class="col-8 text-center temp">
+          <span>{{ weather.tempDay }}&deg;C</span>
+        </div>
+        <div class="col-4 condition-temp">
+          <p class="condition">{{ weather.main }}</p>
+          <p class="night">{{ weather.tempNight }}</p>
+        </div>
+      </div>
+
+      <div class="icon-container card shadow mx-auto">
+        <img src="assets/svg/cloudy.svg" alt="moon" />
+      </div>
+      <div class="card-bottom px-5 py-4 row">
+        <div class="col text-center">
+          <p>{{ weather.humidity }}</p>
+          <span>Humidity</span>
+        </div>
+      </div>
+      <hr />
+    </div>
   </div>
-</div>
+</div> -->
+<!-- <div class="container" *ngFor="let weather of weathers"> -->
+<section class="vh-50">
+  <div class="py-1">
+    <div
+      class="row d-flex justify-content-center align-items-center"
+      style="color: #282828"
+    >
+      <div class="col-md-5 col-lg-7 col-xl-5">
+        <div class="card gradient-custom" style="border-radius: 25px">
+          <div class="card-body shadow-lg" style="border-radius: 25px">
+            <div id="demo1" class="carousel slide" data-ride="carousel">
+              <!-- Carousel inner -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="d-flex justify-content-between mb-4 pb-2">
+                    <div *ngFor="let weather of weathers; let i = index">
+                      <h2 class="display-2" *ngIf="i < 1">
+                        <strong>{{ weather.tempDay }}&deg;C</strong>
+                      </h2>
+                      <p class="text-muted mb-0" *ngIf="i < 1">
+                        {{ cityName }}
+                      </p>
+                    </div>
+                    <div>
+                      <img
+                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu3.webp"
+                        width="150px"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="border-radius: 25px">
+          <div class="card-body p-2 shadow-lg" style="border-radius: 25px">
+            <div id="demo3" class="carousel slide" data-ride="carousel">
+              <!-- Carousel inner -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div
+                    class="d-flex justify-content-around text-center mb-4 pb-3 pt-2"
+                  >
+                    <div class="flex-column">
+                      <p class="small">
+                        <strong>{{ weathers[1].tempDay }}&deg;C</strong>
+                      </p>
+                      <i class="fas fa-sun fa-2x mb-3" style="color: #ddd"></i>
+                      <p class="mb-0">
+                        <strong>{{ weathers[1].dayOfTheWeek }}</strong>
+                      </p>
+                    </div>
+                    <div class="flex-column">
+                      <p class="small">
+                        <strong>{{ weathers[2].tempDay }}&deg;C</strong>
+                      </p>
+                      <i class="fas fa-sun fa-2x mb-3" style="color: #ddd"></i>
+                      <p class="mb-0">
+                        <strong>{{ weathers[2].dayOfTheWeek }}</strong>
+                      </p>
+                    </div>
+                    <div class="flex-column">
+                      <p class="small">
+                        <strong>{{ weathers[3].tempDay }}&deg;C</strong>
+                      </p>
+                      <i
+                        class="fas fa-cloud fa-2x mb-3"
+                        style="color: #ddd"
+                      ></i>
+                      <p class="mb-0">
+                        <strong>{{ weathers[3].dayOfTheWeek }}</strong>
+                      </p>
+                    </div>
+                    <div class="flex-column">
+                      <p class="small">
+                        <strong>{{ weathers[4].tempDay }}&deg;C</strong>
+                      </p>
+                      <i
+                        class="fas fa-cloud fa-2x mb-3"
+                        style="color: #ddd"
+                      ></i>
+                      <p class="mb-0">
+                        <strong>{{ weathers[4].dayOfTheWeek }}</strong>
+                      </p>
+                    </div>
+                    <div class="flex-column">
+                      <p class="small">
+                        <strong>{{ weathers[5].tempDay }}&deg;C</strong>
+                      </p>
+                      <i
+                        class="fas fa-cloud-showers-heavy fa-2x mb-3"
+                        style="color: #ddd"
+                      ></i>
+                      <p class="mb-0">
+                        <strong>{{ weathers[5].dayOfTheWeek }}</strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- </div> -->

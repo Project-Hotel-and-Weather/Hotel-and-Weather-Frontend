@@ -10,7 +10,12 @@ import { Subject } from 'rxjs';
 export class WeatherComponent implements OnInit {
   @Input() cityName: String;
   @Input() sumbitParent: Subject<void>;
-  weather: any = [];
+  weathers: any = [];
+  // dayOfTheWeek: 'today',
+  // main: 'cloud',
+  // tempDay: '30',
+  // tempNight: '10',
+  // humidity: '20%',
 
   constructor(private http: HttpClient) {}
 
@@ -25,7 +30,7 @@ export class WeatherComponent implements OnInit {
       )
       .subscribe((data) => {
         console.log(data);
-        this.weather = data;
+        this.weathers = data;
       });
   }
 }

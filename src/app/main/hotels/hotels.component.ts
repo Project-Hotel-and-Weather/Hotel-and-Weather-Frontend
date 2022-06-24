@@ -22,14 +22,14 @@ export class HotelsComponent implements OnInit {
     this.sumbitParent.subscribe(() => this.urlShoot());
   }
   urlShoot() {
-    this.http
-      .get(
-        'https://hotel-and-weather.herokuapp.com/hotel?location=' +
-          this.cityName
-      )
-      .subscribe((data) => {
-        console.log(data);
-        this.hotels = data;
-      });
+    // this.http
+    //   .get(
+    //     'https://hotel-and-weather.herokuapp.com/hotel?location=' +
+    //       this.cityName
+    //   )
+    //   .subscribe((data) => {
+    //     console.log(data);
+    //     this.hotels = data;
+    //   });
   }
 }
