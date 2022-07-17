@@ -10,15 +10,16 @@ import { Subject } from 'rxjs';
 export class MainComponent {
   city: String = '';
   cityName: String = '';
+  realName: String = this.cityName;
   sumbitParent: Subject<void> = new Subject<void>();
+  searchValue: string = '';
 
-  click() {
+  click(city) {
     this.sumbitParent.next();
   }
 
   onSubmit(form: NgForm) {
     this.cityName = form.value.city;
     this.cityName = this.city.split(' ').join('+');
-    return this.cityName;
   }
 }

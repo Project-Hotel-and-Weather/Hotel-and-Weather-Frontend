@@ -10,8 +10,23 @@ import { Subject } from 'rxjs';
 export class WeatherComponent implements OnInit {
   @Input() cityName: String;
   @Input() sumbitParent: Subject<void>;
-  weather: any = [];
-
+  weathers: any = [];
+  weahterMap = new Map<string, string>([
+    ['Clouds', '../assets/svg/cloudy.svg'],
+    ['Clear', '../assets/svg/day.svg'],
+    ['Snow', '../assets/svg/snowy-6.svg'],
+    ['Rain', '../assets/svg/rainy-6.svg'],
+    ['Thunder', '../assets/svg/thunder.svg'],
+    ['Mist', '../assets/svg/fog.svg'],
+    ['Smoke', '../assets/svg/fog.svg'],
+    ['Haze', '../assets/svg/fog.svg'],
+    ['Dust', '../assets/svg/fog.svg'],
+    ['Fog', '../assets/svg/fog.svg'],
+    ['Sand', '../assets/svg/fog.svg'],
+    ['Ash', '../assets/svg/fog.svg'],
+    ['Squall', '../assets/svg/fog.svg'],
+    ['Tornado', '../assets/svg/tornado.svg'],
+  ]);
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -25,7 +40,7 @@ export class WeatherComponent implements OnInit {
       )
       .subscribe((data) => {
         console.log(data);
-        this.weather = data;
+        this.weathers = data;
       });
   }
 }

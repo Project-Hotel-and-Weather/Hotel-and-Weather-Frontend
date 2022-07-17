@@ -1,7 +1,125 @@
-<div class="row">
-  <div class="col-xs-10">
-    <hr />
-    <h1>{{ cityName }}</h1>
-    <p>POGODA</p>
+<section *ngIf="weathers">
+  <div *ngFor="let weather of weathers; let i = index">
+    <ng-container class="container py-3 h-100" *ngIf="i < 1">
+      <div
+        class="row d-flex justify-content-center align-items-center mt-4"
+        style="color: #282828"
+      >
+        <div class="col-md-9 col-lg-7 col-xl-5">
+          <div class="card mb-4 gradient-custom" style="border-radius: 25px">
+            <div class="card-body p-3 shadow-lg" style="border-radius: 25px">
+              <div class="d-flex justify-content-around ml-4 mb-0 pb-0">
+                <div>
+                  <h2 class="display-2">
+                    <strong>{{ weathers[0].tempDay }}&deg;C</strong>
+                  </h2>
+                  <p class="dayOfTheWeek">{{ weathers[0].dayOfTheWeek }}</p>
+                </div>
+                <div *ngFor="let img of weahterMap | keyvalue">
+                  <div *ngIf="weathers[0].main == img.key">
+                    <img class="todayWeather" src="{{ img.value }}" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="row d-flex justify-content-center align-items-center h-100"
+        style="color: #282828"
+      >
+        <div class="card mb-1 staryNajebany" style="border-radius: 25px">
+          <div
+            class="card-body p-4 shadow-lg staryNajebany"
+            style="border-radius: 25px"
+          >
+            <div
+              class="d-flex justify-content-around text-center mb-4 pb-3 pt-2"
+            >
+              <div class="flex-column">
+                <p class="small">
+                  <strong>{{ weathers[1].tempDay }}&deg;C</strong>
+                </p>
+                <div *ngFor="let img of weahterMap | keyvalue">
+                  <img
+                    *ngIf="weathers[1].main == img.key"
+                    class="fas fa-2x mb-3"
+                    src="{{ img.value }}"
+                  />
+                </div>
+                <p class="mb-0">
+                  <strong>{{ weathers[1].dayOfTheWeek }}</strong>
+                </p>
+              </div>
+
+              <div class="flex-column">
+                <p class="small">
+                  <strong>{{ weathers[2].tempDay }}&deg;C</strong>
+                </p>
+                <div *ngFor="let img of weahterMap | keyvalue">
+                  <img
+                    *ngIf="weathers[2].main == img.key"
+                    class="fas fa-2x mb-3"
+                    src="{{ img.value }}"
+                  />
+                </div>
+                <p class="mb-0">
+                  <strong>{{ weathers[2].dayOfTheWeek }}</strong>
+                </p>
+              </div>
+
+              <div class="flex-column">
+                <p class="small">
+                  <strong>{{ weathers[3].tempDay }}&deg;C</strong>
+                </p>
+                <div *ngFor="let img of weahterMap | keyvalue">
+                  <img
+                    *ngIf="weathers[3].main == img.key"
+                    class="fas fa-2x mb-3"
+                    src="{{ img.value }}"
+                  />
+                </div>
+                <p class="mb-0">
+                  <strong>{{ weathers[3].dayOfTheWeek }}</strong>
+                </p>
+              </div>
+
+              <div class="flex-column">
+                <p class="small">
+                  <strong>{{ weathers[4].tempDay }}&deg;C</strong>
+                </p>
+                <div *ngFor="let img of weahterMap | keyvalue">
+                  <img
+                    *ngIf="weathers[4].main == img.key"
+                    class="fas fa-2x mb-3"
+                    src="{{ img.value }}"
+                  />
+                </div>
+                <p class="mb-0">
+                  <strong>{{ weathers[4].dayOfTheWeek }}</strong>
+                </p>
+              </div>
+
+              <div class="flex-column">
+                <p class="small">
+                  <strong>{{ weathers[5].tempDay }}&deg;C</strong>
+                </p>
+                <div *ngFor="let img of weahterMap | keyvalue">
+                  <img
+                    *ngIf="weathers[5].main == img.key"
+                    class="fas fa-2x mb-3"
+                    src="{{ img.value }}"
+                  />
+                </div>
+                <p class="mb-0">
+                  <strong>{{ weathers[5].dayOfTheWeek }}</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
   </div>
-</div>
+</section>
