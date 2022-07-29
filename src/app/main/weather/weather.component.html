@@ -18,6 +18,18 @@
                 <div *ngFor="let img of weahterMap | keyvalue">
                   <div *ngIf="weathers[0].main == img.key">
                     <img class="todayWeather" src="{{ img.value }}" />
+                    <div class="dayOfTheWeek">
+                      <p>
+                        Humidity:
+                        <strong>{{ weathers[0].humidity }}&deg;C</strong>
+                      </p>
+                      <p>
+                        SunRise: <strong>{{ weathers[0].sunRise }}</strong>
+                      </p>
+                      <p>
+                        SunSet: <strong>{{ weathers[0].sunSet }}</strong>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -29,9 +41,9 @@
         class="row d-flex justify-content-center align-items-center h-100"
         style="color: #282828"
       >
-        <div class="card mb-1 staryNajebany" style="border-radius: 25px">
+        <div class="card mb-1 sizzer" style="border-radius: 25px">
           <div
-            class="card-body p-4 shadow-lg staryNajebany"
+            class="card-body p-4 shadow-lg sizzer"
             style="border-radius: 25px"
           >
             <div
