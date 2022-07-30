@@ -8,17 +8,19 @@ import { Subject } from 'rxjs';
   styleUrls: ['./hotels.component.scss'],
 })
 export class HotelsComponent implements OnInit {
-  // wawel = '';
   @Input() cityName: String;
   @Input() sumbitParent: Subject<void>;
-
+  long: number = 0;
   hotels: any = [];
+  randomSetNumber = new Array<number>();
+  hotelsImage = new Map<number, string>([
+    [1, '../assets/images/1.jpg'],
+    [2, '../assets/images/2.jpg'],
+  ]);
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    // this.hotels = [];
-    // this.wawel = '';
     this.sumbitParent.subscribe(() => this.urlShoot());
   }
   urlShoot() {
@@ -28,8 +30,22 @@ export class HotelsComponent implements OnInit {
           this.cityName
       )
       .subscribe((data) => {
-        console.log(data);
         this.hotels = data;
+        this.long = this.hotels.length;
+        console.log('hotels', this.hotels);
+        this.kupa();
+        for (let i = 0; i < this.long; i++) {
+          this.hotels[i].url = this.randomSetNumber[i];
+        }
       });
+  }
+  kupa() {
+    for (let i = 0; i < this.long; i++) {
+      const rndInt = this.randomNumber(1, 2);
+      this.randomSetNumber.push(rndInt);
+    }
+  }
+  randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
 }

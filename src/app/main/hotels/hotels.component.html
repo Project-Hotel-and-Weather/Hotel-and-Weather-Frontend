@@ -1,21 +1,37 @@
 <div class="container">
-  <div class="row">
-    <div class="card" style="width: 18rem" *ngFor="let hotel of hotels">
-      <div class="fit-img">
+  <div class="row justify-content-around">
+    <div
+      class="card shadow-lg"
+      style="width: 18rem"
+      *ngFor="let hotel of hotels"
+    >
+      <div class="fit-img" *ngFor="let imgHotel of hotelsImage | keyvalue">
+        <!-- <p>{{ hotel.url }}</p> -->
+        <!-- <p>{{ imgHotel.key }}</p> -->
+
         <img
-          src="http://t1.gstatic.com/licensed-image?q=tbn:ANd9GcTvHFjpNdFVwDxer5IOKkp0IlVn2iz6wgF-AMI8NiJH2w3KGrmnkOi87rZUCrNwwiO3"
+          *ngIf="hotel.url == imgHotel.key"
+          src="{{ imgHotel.value }}"
           class="card-img-top"
           alt="..."
         />
       </div>
       <div class="card-body">
-        <h5 class="card-title">{{ hotel.name }}</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <p>{{ hotel.roomName }} room, price from {{ hotel.price + " zł" }}</p>
-        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        <div>
+          <h5 class="card-title">{{ hotel.name }}</h5>
+          <span>{{ hotel.roomName }} room</span>
+          <div class="scroll">
+            <ul class="card-text" *ngFor="let detail of hotel.formatted">
+              <li class="">{{ detail }}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="d-flex align-content-end">
+          <br />
+          <span>
+            <strong> Price: {{ hotel.price }} zł</strong>
+          </span>
+        </div>
       </div>
     </div>
   </div>

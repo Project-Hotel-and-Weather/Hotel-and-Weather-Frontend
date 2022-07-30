@@ -1,8 +1,18 @@
-img{
-  width: 287px;
+img {
+  width: 278px;
   height: 200px;
 }
+
 .card {
-  margin-right: 10px;
-  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding: 2px;
+  width: auto;
+  // margin-right: 10px;
+  margin-bottom: 15px;
+  border: 2px solid gray;
+}
+
+.scroll {
+  height: 150px;
+  overflow-y: scroll;
 }
