@@ -1,8 +1,8 @@
 <!-- <div class="container">
   <div class="col-md-12"> -->
-<div class="">
+<div>
   <form
-    class="form-inline my-2 my-lg-0 mx-lg-2 d-flex justify-content-center"
+    class="form-inline d-flex justify-content-center"
     (ngSubmit)="onSubmit(f)"
     #f="ngForm"
   >
@@ -21,9 +21,9 @@
       Search
     </button>
   </form>
-  <div class="column">
+  <div class="backimage">
     <app-weather [cityName]="city" [sumbitParent]="sumbitParent"></app-weather>
-    <hr />
+    <br />
     <app-hotels [cityName]="city" [sumbitParent]="sumbitParent"></app-hotels>
   </div>
 </div>
